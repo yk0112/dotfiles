@@ -17,7 +17,8 @@ vim.g.mapleader = " " -- Make sure to set `mapleader` before lazy so your mappin
 
 require("lazy").setup({
   "folke/which-key.nvim",
-  { "EdenEast/nightfox.nvim" },
+ -- { "EdenEast/nightfox.nvim" },
+  { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
   { "nvim-treesitter/nvim-treesitter" },
   {"nvim-tree/nvim-tree.lua"},
   {'nvim-telescope/telescope.nvim', tag = '0.1.2',
@@ -38,13 +39,30 @@ require("lazy").setup({
     },
     version = '^1.0.0', -- optional: only update when a new 1.x version is released
   },
+ { "folke/noice.nvim",
+   event = "VeryLazy",
+   opts = {
+     -- add any options here
+   },
+   dependencies = {
+     -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+     "MunifTanjim/nui.nvim",
+     -- OPTIONAL:
+     --   `nvim-notify` is only needed, if you want to use the notification view.
+     --   If not available, we use `mini` as the fallback
+     "rcarriga/nvim-notify",
+     }
+  },
    -- cmp plugin
   { "hrsh7th/nvim-cmp"},  -- The completion plugin
   { "hrsh7th/cmp-buffer"}, -- buffer completions
   { "hrsh7th/cmp-path"}, -- path completions 
+  { "hrsh7th/cmp-cmdline"}, -- cmdline completions
   { "saadparwaiz1/cmp_luasnip"}, -- snippet completions
-  { "hrsh7th/cmp-cmdline"},
-  { "hrsh7th/cmp-nvim-lsp"},
+  
+   -- Snippets
+  { "L3MON4D3/LuaSnip" }, --snippet engine
+  { "rafamadriz/friendly-snippets" }, -- a bunch of snippets to use
 
    --LSP
   {'neovim/nvim-lspconfig'}, -- enable LSP
