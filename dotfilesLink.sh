@@ -1,4 +1,4 @@
 #!/bin/sh
-ln -sf  ~/dotfiles/nvim ~/.config/nvim
-ln -sf  ~/dotfiles/kitty ~/.config/kitty
+ln -sf  ~/dotfiles/nvim ~/.config
+ln -sf  ~/dotfiles/kitty ~/.config
 
