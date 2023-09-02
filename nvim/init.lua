@@ -2,6 +2,7 @@ require("user.options")
 require("user.plugins")
 require("user.colorscheme")
 require("user.treesitter")
+require("user.toggleterm")
 require("user.keymap")
 require("nvim-tree").setup({
   sort_by = "case_sensitive",

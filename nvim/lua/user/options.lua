@@ -1,6 +1,6 @@
 vim.o.number = true
 vim.o.guicursor = 'i:block' 
--- vim.o.clipbord = 'unnamedplusunnamed'
+vim.o.confirm = true
 vim.o.termguicolors = true
 vim.o.fileencoding = "utf-8"
 vim.opt.clipboard:append({ "unnamedplus" })
