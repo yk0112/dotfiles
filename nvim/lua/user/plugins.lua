@@ -39,6 +39,8 @@ require("lazy").setup({
     },
     version = '^1.0.0', -- optional: only update when a new 1.x version is released
   },
+  -- dashbord --
+  {'glepnir/dashboard-nvim'},
   -- toggleterm --  
  {'akinsho/toggleterm.nvim', version = "*", config = true},
  { "folke/noice.nvim",
@@ -60,13 +62,15 @@ require("lazy").setup({
   { "hrsh7th/cmp-buffer"}, -- buffer completions
   { "hrsh7th/cmp-path"}, -- path completions 
   { "hrsh7th/cmp-cmdline"}, -- cmdline completions
-  { "saadparwaiz1/cmp_luasnip"}, -- snippet completions
-  
-   -- Snippets
+  { "saadparwaiz1/cmp_luasnip"}, -- snippet completion
+
+  -- Snippets
   { "L3MON4D3/LuaSnip" }, --snippet engine
   { "rafamadriz/friendly-snippets" }, -- a bunch of snippets to use
 
    --LSP
+  { "williamboman/mason.nvim" },
+  { "williamboman/mason-lspconfig.nvim" },
   {'neovim/nvim-lspconfig'}, -- enable LSP
   {'williamboman/nvim-lsp-installer'}, -- make easy to install LS
 })

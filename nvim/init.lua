@@ -1,8 +1,9 @@
 require("user.options")
 require("user.plugins")
 require("user.colorscheme")
-require("user.treesitter")
 require("user.toggleterm")
+require("user.treesitter")
+require("user.dashbord")
 require("user.keymap")
 require("nvim-tree").setup({
   sort_by = "case_sensitive",
@@ -13,7 +14,7 @@ require("nvim-tree").setup({
     group_empty = true,
   },
   filters = {
-    dotfiles = true,
+    dotfiles =  true,
   },
 })
 
