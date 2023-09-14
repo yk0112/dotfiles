@@ -65,7 +65,6 @@ local function on_attach(client, bufnr)
   end
 end
 
-local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 mason_lspconfig.setup_handlers({
   function(server)
@@ -74,7 +73,6 @@ mason_lspconfig.setup_handlers({
       opts = {}
     end
     opts.on_attach = on_attach
-    opts.capabilities = capabilities
     lspconfig[server].setup(opts)
   end,
 })
