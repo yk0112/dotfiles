@@ -73,6 +73,10 @@ require("lazy").setup({
   { "williamboman/mason-lspconfig.nvim" },
   {'neovim/nvim-lspconfig'}, -- enable LSP
   {'williamboman/nvim-lsp-installer'}, -- make easy to install LS
+
+  -- plugin for clnag-format
+  { "rhysd/vim-clang-format" },
+  { "kana/vim-operator-user" }
 })
 
 

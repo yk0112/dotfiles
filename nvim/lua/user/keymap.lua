@@ -34,3 +34,12 @@ vim.keymap.set("n", "<ESC><ESC>", ":noh<cr>")
 --ファイルを閉じる
 vim.keymap.set("n", "<C-x>", ":bd<cr>")
 
+-- clang-formatの設定
+vim.keymap.set("n", "<leader>f", ":ClangFormat<cr>")
+vim.keymap.set("n", "<leader>cf", ":ClangFormatAutoToggle<cr>")
+
+
+
+
+
+
