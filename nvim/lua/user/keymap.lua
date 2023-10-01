@@ -28,4 +28,9 @@ vim.keymap.set("n", "<M-k>", ":resize +2<cr>", {})
 vim.keymap.set("n", "<M-h>", ":vertical resize -2<cr>", {})
 vim.keymap.set("n", "<M-l>", ":vertical resize +2<cr>", {})
 
+--検索語のハイライトを消す
+vim.keymap.set("n", "<ESC><ESC>", ":noh<cr>")
+
+--ファイルを閉じる
+vim.keymap.set("n", "<C-x>", ":bd<cr>")
 

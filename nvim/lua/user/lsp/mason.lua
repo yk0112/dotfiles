@@ -23,7 +23,10 @@ mason.setup({
 })
 
 mason_lspconfig.setup({
-  ensure_installed = { "clangd" },
+ -- list of server fot mason to install	
+  ensure_installed = {
+	  "clangd"
+ },
   automatic_installation = false,
 })
 
