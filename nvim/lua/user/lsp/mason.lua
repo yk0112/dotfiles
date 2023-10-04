@@ -75,6 +75,9 @@ mason_lspconfig.setup_handlers({
     if not opt_ok then
       opts = {}
     end
+    if server == "cmake" then
+      opts.filetype = {"cmake", "CmakeLists.txt"}
+    end
     opts.on_attach = on_attach
     lspconfig[server].setup(opts)
   end,

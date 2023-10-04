@@ -11,10 +11,15 @@ vim.keymap.set('n', '<leader>e', ':NvimTreeToggle<cr>', {})
 vim.keymap.set('i', 'jk', '<esc>', {})
 vim.keymap.set('i', 'kj', '<esc>', {})
 
---vim.keymap.set('n', '<leader>tn', ':tabnew<cr>', {})
+vim.keymap.set('n', '<leader>tn', ':tabnew<cr>', {})
 vim.keymap.set('n', '<leader>tc', ':tabclose<cr>', {})
 vim.keymap.set("n", "<C-n>", ":bnext<Return>", {})
 vim.keymap.set("n", "<C-p>", ":bprevious<Return>", {})
+
+--ウィンドウの分割
+
+vim.keymap.set("n", "<C-w>v", ":vsp<cr>", {})
+vim.keymap.set("n", "<C-w>s", ":sp<cr>", {})
 
 --ウィンドウの移動
 vim.keymap.set("n", "<C-h>", "<C-w>h", {})
