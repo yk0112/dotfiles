@@ -39,6 +39,8 @@ require("lazy").setup({
     },
     version = '^1.0.0', -- optional: only update when a new 1.x version is released
   },
+  -- commnet out ---
+  {'numToStr/Comment.nvim'},
   -- dashbord --
   {'glepnir/dashboard-nvim'},
   -- toggleterm --  
