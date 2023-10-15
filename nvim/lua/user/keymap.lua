@@ -1,18 +1,20 @@
-local builtin = require('telescope.builtin')
+local builtin = require("telescope.builtin")
+local conform = require("conform")
+local lint = require("lint")
 -- <leader> == space
 -- vim.keymap.set(mode, binding, 何を呼び出すか, option)
-vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
-vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
-vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
-vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
-vim.keymap.set('n', '<leader>e', ':NvimTreeToggle<cr>', {})
+vim.keymap.set("n", "<leader>ff", builtin.find_files, {})
+vim.keymap.set("n", "<leader>fg", builtin.live_grep, {})
+vim.keymap.set("n", "<leader>fb", builtin.buffers, {})
+vim.keymap.set("n", "<leader>fh", builtin.help_tags, {})
+vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<cr>", {})
 
 -- useful bindings
-vim.keymap.set('i', 'jk', '<esc>', {})
-vim.keymap.set('i', 'kj', '<esc>', {})
+vim.keymap.set("i", "jk", "<esc>", {})
+vim.keymap.set("i", "kj", "<esc>", {})
 
-vim.keymap.set('n', '<leader>tn', ':tabnew<cr>', {})
-vim.keymap.set('n', '<leader>tc', ':tabclose<cr>', {})
+vim.keymap.set("n", "<leader>tn", ":tabnew<cr>", {})
+vim.keymap.set("n", "<leader>tc", ":tabclose<cr>", {})
 vim.keymap.set("n", "<C-n>", ":bnext<Return>", {})
 vim.keymap.set("n", "<C-p>", ":bprevious<Return>", {})
 
@@ -39,12 +41,29 @@ vim.keymap.set("n", "<ESC><ESC>", ":noh<cr>")
 --ファイルを閉じる
 vim.keymap.set("n", "<C-x>", ":bd<cr>")
 
--- clang-formatの設定
+-- formatterの設定
+vim.keymap.set({ "n", "v" }, "<leader>mp", function()
+	conform.format({
+		lsp_fallback = true,
+		async = false,
+		timeout_ms = 500,
+	})
+end, { desc = "Format file or range (in visual mode)" })
+
+-- lintterの設定
+local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })
+
+vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost", "InsertLeave" }, {
+      group = lint_augroup,
+      callback = function()
+        lint.try_lint()
+      end,
+})
+
+ vim.keymap.set("n", "<leader>l", function()
+      lint.try_lint()
+    end, { desc = "Trigger linting for current file" })   
+
+    -- clang-formatの設定
 vim.keymap.set("n", "<leader>f", ":ClangFormat<cr>")
 vim.keymap.set("n", "<leader>cf", ":ClangFormatAutoToggle<cr>")
-
-
-
-
-
-

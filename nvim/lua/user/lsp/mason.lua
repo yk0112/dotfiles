@@ -2,10 +2,12 @@ local status_ok, mason = pcall(require, "mason")
 if not status_ok then
   return
 end
+
 local mason_config_ok, mason_lspconfig = pcall(require, "mason-lspconfig")
 if not mason_config_ok then
   return
 end
+
 local lspconfig_ok, lspconfig = pcall(require, "lspconfig")
 if not lspconfig_ok then
   return
@@ -25,10 +27,11 @@ mason.setup({
 mason_lspconfig.setup({
  -- list of server fot mason to install	
   ensure_installed = {
-	  "clangd"
+      "clangd"
  },
   automatic_installation = false,
 })
+
 
 local function set_buf_key(bufnr)
   local opts = { noremap = true, silent = true }
