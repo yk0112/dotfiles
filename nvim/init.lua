@@ -4,6 +4,7 @@ require("user.colorscheme")
 require("user.toggleterm")
 require("user.treesitter")
 require("user.dashbord")
+require("user.comment")
 require("user.keymap")
 require("nvim-tree").setup({
   sort_by = "case_sensitive",
@@ -93,7 +94,7 @@ require("noice").setup({
 
 require("user.cmp")
 require("user.lsp")
-
-
+require("user.formatting")
+require("user.linting")
 
 
