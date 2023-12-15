@@ -54,16 +54,16 @@ end, { desc = "Format file or range (in visual mode)" })
 local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })
 
 vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost", "InsertLeave" }, {
-      group = lint_augroup,
-      callback = function()
-        lint.try_lint()
-      end,
+	group = lint_augroup,
+	callback = function()
+		lint.try_lint()
+	end,
 })
 
- vim.keymap.set("n", "<leader>l", function()
-      lint.try_lint()
-    end, { desc = "Trigger linting for current file" })   
+vim.keymap.set("n", "<leader>l", function()
+	lint.try_lint()
+end, { desc = "Trigger linting for current file" })
 
-    -- clang-formatの設定
-vim.keymap.set("n", "<leader>f", ":ClangFormat<cr>")
-vim.keymap.set("n", "<leader>cf", ":ClangFormatAutoToggle<cr>")
+-- clang-formatの設定
+-- vim.keymap.set("n", "<leader>f", ":ClangFormat<cr>")
+--  vim.keymap.set("n", "<leader>cf", ":ClangFormatAutoToggle<cr>")

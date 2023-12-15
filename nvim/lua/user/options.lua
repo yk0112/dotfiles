@@ -1,5 +1,5 @@
 vim.o.number = true
-vim.o.guicursor = 'i:block' 
+vim.o.guicursor = "i:block"
 vim.o.confirm = true
 vim.o.termguicolors = true
 vim.o.fileencoding = "utf-8"
@@ -21,8 +21,6 @@ vim.opt.termguicolors = true
 vim.opt.swapfile = false
 
 vim.opt.mouse = "a"
-vim.opt.splitbelow = true; 
-vim.opt.splitright = true;
-vim.opt.updatetime = 300;
-
-
+vim.opt.splitbelow = true
+vim.opt.splitright = true
+vim.opt.updatetime = 300
