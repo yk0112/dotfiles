@@ -92,6 +92,40 @@ require("noice").setup({
 	},
 })
 
+require("nvim-ts-autotag").setup()
+
+local highlight = {
+	"RainbowBlue",
+}
+local hooks = require("ibl.hooks")
+
+hooks.register(hooks.type.HIGHLIGHT_SETUP, function()
+	vim.api.nvim_set_hl(0, "RainbowBlue", { fg = "#61AFEF" })
+end)
+
+require("ibl").setup({
+	enabled = true,
+	debounce = 100,
+	indent = { char = "|" },
+	scope = { highlight = highlight },
+	whitespace = { highlight = { "Whitespace", "NonText" } },
+	exclude = {
+		filetypes = {
+			"lua",
+			"cpp",
+			"python",
+			"help",
+			"terminal",
+			"dashboard",
+			"packer",
+			"lspinfo",
+			"TelescopePrompt",
+			"TelescopeResults",
+		},
+		buftypes = { "terminal" },
+	},
+})
+
 require("user.cmp")
 require("user.lsp.mason")
 require("user.lsp")

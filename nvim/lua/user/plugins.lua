@@ -41,7 +41,24 @@ require("lazy").setup({
 		version = "^1.0.0", -- optional: only update when a new 1.x version is released
 	},
 	-- commnet out ---
-	{ "numToStr/Comment.nvim" },
+	{
+		"numToStr/Comment.nvim",
+		keys = {
+			{ "<leader>cl", mode = "n" },
+			{ "<leader>cl", mode = "v" },
+		},
+		config = function()
+			require("Comment").setup({
+				line_mapping = "<leader>cc",
+				toggler = {
+					line = "<leader>cl",
+				},
+				opleader = {
+					line = "<leader>cl",
+				},
+			})
+		end,
+	},
 	-- dashbord --
 	{ "glepnir/dashboard-nvim" },
 	-- toggleterm --
@@ -88,4 +105,9 @@ require("lazy").setup({
 	-- plugin for clnag-format
 	{ "rhysd/vim-clang-format" },
 	{ "kana/vim-operator-user" },
+
+	-- html auto closing tag
+	{ "windwp/nvim-ts-autotag" },
+	-- indent line
+	{ "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
 })
