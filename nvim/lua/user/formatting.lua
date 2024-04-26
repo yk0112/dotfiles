@@ -11,6 +11,7 @@ require("conform").setup({
 		scss = { "prettier" },
 		typescriptreact = { "prettier" },
 		javascriptreact = { "prettier" },
+		go = { "gofumpt" },
 	},
 
 	format_on_save = {

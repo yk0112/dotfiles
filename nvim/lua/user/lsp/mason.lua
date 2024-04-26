@@ -42,7 +42,13 @@ local function set_buf_key(bufnr)
 	vim.api.nvim_buf_set_keymap(bufnr, "n", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
 	vim.api.nvim_buf_set_keymap(bufnr, "n", "gr", "<cmd>Trouble lsp_references<cr>", opts)
 	vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
-	vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>f", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
+	vim.api.nvim_buf_set_keymap(
+		bufnr,
+		"n",
+		"<leader>f",
+		"<cmd>lua vim.diagnostic.open_float({focusable=true})<CR>",
+		opts
+	)
 	vim.api.nvim_buf_set_keymap(bufnr, "n", "[d", '<cmd>lua vim.diagnostic.goto_prev({ border = "rounded" })<CR>', opts)
 	vim.api.nvim_buf_set_keymap(
 		bufnr,
@@ -77,6 +83,9 @@ mason_lspconfig.setup_handlers({
 		end
 		if server == "cmake" then
 			opts.filetype = { "cmake", "CmakeLists.txt" }
+		end
+		if server == "docker" then
+			opts.filetype = { "docker", "compose.yaml" }
 		end
 		opts.on_attach = on_attach
 		lspconfig[server].setup(opts)
