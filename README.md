@@ -1,3 +1,4 @@
 # dotfiles
 
-<img width="1512" alt="スクリーンショット 2023-10-17 22 06 24" src="https://github.com/yk0112/dotfiles/assets/130746469/0139d2ec-701a-47a9-aff0-ad50fd7826e2">
+
+<img width="1512" alt="スクリーンショット 2024-05-01 13 14 41" src="https://github.com/yk0112/dotfiles/assets/130746469/07d1d40d-8192-4ac0-a558-4a046b5103ed">
