@@ -11,6 +11,10 @@ map("i", "kj", "<ESC>")
 map("n", "<c-\\>", ":ToggleTerm<Return>")
 map("n", "<leader>e", ":NvimTreeToggle<cr>")
 
+-- LSP hover
+map("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>")
+map("n", "<leader>f", "<cmd>lua vim.diagnostic.open_float({focusable=true})<CR>")
+
 -- タブの移動
 map("n", "<C-n>", ":bnext<Return>")
 map("n", "<C-p>", ":bprevious<Return>")
