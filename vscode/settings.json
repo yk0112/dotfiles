@@ -1,0 +1,9 @@
+{
+    "workbench.editor.enablePreview": false,
+    "vim.insertModeKeyBindings": [
+      {
+        "before": ["j", "k"],
+        "after": ["<Esc>"]
+      }
+    ]
+}
